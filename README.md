@@ -392,13 +392,6 @@ Conflict-Induced-Food-Crisis-Prediction/
 
 ---
 
-## 👥 Authors
-
-**10Academy — Week 10 Capstone Project**
-Built for humanitarian food security prediction in Sub-Saharan Africa.
-
----
-
 ## 📄 License
 
 This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
