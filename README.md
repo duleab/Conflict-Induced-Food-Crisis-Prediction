@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌍 Conflict-Induced Food Crisis Prediction
+#  Conflict-Induced Food Crisis Prediction
 
 ### Africa Food Security Early Warning System
 
@@ -13,13 +13,13 @@
 
 **Predicting food crises driven by armed conflict in Sub-Saharan Africa — 90 days ahead**
 
-[📊 Analysis Report](ANALYSIS_REPORT.md) · [🗺️ Live Map](africa_crisis_map_v2.html) · [🤖 Run Notebooks](#notebooks) · [🚀 Streamlit App](#deployment)
+[ Analysis Report](ANALYSIS_REPORT.md) · [ Live Map](africa_crisis_map_v2.html) · [ Run Notebooks](#notebooks) · [ Streamlit App](#deployment)
 
 </div>
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Project Overview](#-project-overview)
 - [Key Results](#-key-results)
@@ -36,7 +36,7 @@
 
 ---
 
-## 🎯 Project Overview
+##  Project Overview
 
 This project builds a **machine learning pipeline** that predicts **IPC Phase 3+ food crises** 90 days in advance across 14 Sub-Saharan African countries. It combines:
 
@@ -52,7 +52,7 @@ The system provides both a **trained XGBoost model** and an **interactive Africa
 
 ---
 
-## 🏆 Key Results
+##  Key Results
 
 <div align="center">
 
@@ -70,8 +70,8 @@ The system provides both a **trained XGBoost model** and an **interactive Africa
 
 ```
                   Predicted Safe    Predicted Crisis
-Actual Safe           3,996 ✅             5 ⚠️
-Actual Crisis            71 ⚠️         4,387 ✅
+Actual Safe           3,996              5 
+Actual Crisis            71          4,387 
 
 False Negative Rate :  1.6%  (71 missed crises)
 False Positive Rate :  0.1%  (5 false alarms)
@@ -79,7 +79,7 @@ False Positive Rate :  0.1%  (5 false alarms)
 
 ---
 
-## 📊 Data Sources
+##  Data Sources
 
 | Source | What It Provides | Coverage | Size |
 |--------|-----------------|----------|------|
@@ -98,7 +98,7 @@ Southern Africa : Mozambique
 
 ---
 
-## 🔄 Pipeline Architecture
+##  Pipeline Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
@@ -144,7 +144,7 @@ Southern Africa : Mozambique
 
 ---
 
-## 📓 Notebooks
+##  Notebooks
 
 | Notebook | Task | Description | Runtime |
 |----------|------|-------------|---------|
@@ -157,7 +157,7 @@ All notebooks are designed for **Google Colab** with automatic Drive backup/rest
 
 ---
 
-## ⚙️ Feature Engineering
+##  Feature Engineering
 
 32 features across 7 categories:
 
@@ -187,16 +187,16 @@ Feature Categories:
 
 ---
 
-## 📈 Model Performance
+##  Model Performance
 
 ### Feature Importance Chart (Top 20)
 
 The XGBoost model's gain-based feature importance shows the dominance of IPC history features, with conflict and rainfall features providing the critical marginal signal for predicting *changes* in food security status.
 
 **Reading the chart:**
-- 🔴 Red bars: IPC persistence features (48% + 36% + 6% = 90.8% gain)
-- 🟠 Orange bars: Seasonal and rainfall features
-- 🔵 Blue bars: Conflict and compound risk features
+-  Red bars: IPC persistence features (48% + 36% + 6% = 90.8% gain)
+   Orange bars: Seasonal and rainfall features
+-  Blue bars: Conflict and compound risk features
 
 ### Threshold Selection
 
@@ -219,7 +219,7 @@ Two deployment modes are available:
 
 ---
 
-## 🔍 SHAP Explainability
+##  SHAP Explainability
 
 The model uses **SHAP (SHapley Additive exPlanations)** to explain every prediction.
 
@@ -251,16 +251,16 @@ Chad / Barh El Gazel, February 2024 — P=0.010 (predicted SAFE, was CRISIS)
 
 ### Risk Levels by Country (2023–2026 predictions)
 
-| Risk | 🟣 Famine | 🔴 Emergency | 🟠 Crisis | 🟡 Stressed | 🟢 Minimal |
+| Risk |  Famine |  Emergency |  Crisis |  Stressed |  Minimal |
 |------|:---:|:---:|:---:|:---:|:---:|
 | **Countries** | S. Sudan, Sudan, Somalia | Mozambique | Niger, Ethiopia | Chad, Burkina Faso, Mali, Cameroon | Nigeria, Kenya |
 
 ### Map Features
-- 🗺️ **Choropleth** — country fill color by mean crisis probability
-- ⭕ **Circle markers** — sized by probability, color-coded by risk level
-- 💬 **Click popups** — probability bar, crisis rate, region count, avg IPC phase
-- 📊 **Stats panel** — Famine/Emergency/Crisis country counts
-- 🏷️ **Country labels** — name + probability floating on map
+-  **Choropleth** — country fill color by mean crisis probability
+-  **Circle markers** — sized by probability, color-coded by risk level
+-  **Click popups** — probability bar, crisis rate, region count, avg IPC phase
+-  **Stats panel** — Famine/Emergency/Crisis country counts
+-  **Country labels** — name + probability floating on map
 
 ### Ground Truth Validation
 All risk predictions align with published 2024-2026 humanitarian assessments:
@@ -270,7 +270,7 @@ All risk predictions align with published 2024-2026 humanitarian assessments:
 
 ---
 
-## 🚀 Deployment
+##  Deployment
 
 ### Streamlit Dashboard
 
@@ -283,13 +283,13 @@ streamlit run app.py
 ```
 
 **Dashboard Features:**
-- 🌍 Interactive Folium map (dark theme)
-- 📊 Crisis probability distribution
-- 📈 Monthly time series by country
-- 🌡️ Country risk ranking
-- 🤖 Model performance metrics (val + test)
-- 🎯 Live threshold switcher (F1-Optimal vs Humanitarian)
-- 🔍 Country and date filters
+-  Interactive Folium map (dark theme)
+-  Crisis probability distribution
+-  Monthly time series by country
+-  Country risk ranking
+-  Model performance metrics (val + test)
+-  Live threshold switcher (F1-Optimal vs Humanitarian)
+-  Country and date filters
 
 ### Google Colab (Recommended for Training)
 
@@ -303,7 +303,7 @@ BACKUP = Path('/content/drive/MyDrive/crisis_outputs_backup')
 
 ---
 
-## 💻 Installation
+## Installation
 
 ```bash
 git clone https://github.com/duleab/Conflict-Induced-Food-Crisis-Prediction.git
@@ -341,7 +341,7 @@ drive.mount('/content/drive')
 
 ---
 
-## 🔮 Future Work
+##  Future Work
 
 ### Immediate
 - [ ] **Country fixed-effects** — add country one-hot encoding to reduce geographic bias
@@ -361,7 +361,7 @@ drive.mount('/content/drive')
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 Conflict-Induced-Food-Crisis-Prediction/
@@ -392,7 +392,7 @@ Conflict-Induced-Food-Crisis-Prediction/
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
 
@@ -400,7 +400,7 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE) for de
 
 <div align="center">
 
-**⭐ Star this repo if it helped you!**
+** Star this repo if it helped you!**
 
 *Built with XGBoost · SHAP · Folium · Streamlit · Google Colab*
 
