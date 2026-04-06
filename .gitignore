@@ -1,5 +1,7 @@
 # Data files
 data/
+!data/Pictures/
+!data/Pictures/*
 # Output files
 output/
 crisis_outputs/
