@@ -1,4 +1,4 @@
-# 🌍 Africa Conflict-Induced Food Crisis Prediction — Full Pipeline Report
+#  Africa Conflict-Induced Food Crisis Prediction — Full Pipeline Report
 
 # Task 1: Data Collection & Raw Pipeline
 
@@ -43,7 +43,7 @@ Pandas version    : 2.2.2
 ---
 ## Step 2 — Google Drive Mount
 
-#### 🏁 Output
+####  Output
 ```text
 Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount("/content/drive", force_remount=True).
  Files already present — skipping restore.
@@ -81,7 +81,7 @@ Existing CSVs (26):
 ---
 ## Step 3 — Configuration
 
-#### 🏁 Output
+####  Output
 ```text
   Using hardcoded credentials (set Colab Secrets for safety).
 
@@ -814,7 +814,7 @@ Files saved to /content/crisis_outputs:
 | `scale_pos_weight` | Printed above — use in XGBoostClassifier |
 | Dominant feature | `ipc_lag1` (~38% RF importance) |
 | Anti-leakage |  PASSED — strict temporal ordering enforced |
-| Test set | 🔒 **SEALED** — do not open until Task 4 |
+| Test set |  **SEALED** — do not open until Task 4 |
 
 ### Next → Task 3: Baseline Models, XGBoost & Hyperparameter Tuning
 
@@ -886,19 +886,19 @@ Mounted at /content/drive
 
 #### 🏁 Output
 ```text
-✅ Google Drive already mounted.
+ Google Drive already mounted.
 Restoring from /content/drive/MyDrive/crisis_outputs_backup → /content/crisis_outputs ...
-✅ Restored 59 files/directories.
-  ✅ X_train.csv                                     2207.3 KB
-  ✅ X_val.csv                                        621.3 KB
-  ✅ X_test.csv                                      1289.3 KB
-  ✅ y_train.csv                                       26.5 KB
-  ✅ y_val.csv                                          7.6 KB
-  ✅ y_test.csv                                        16.5 KB
-  ✅ split_report.json                                  1.5 KB
-  ✅ features_engineered.csv                         5791.2 KB
+ Restored 59 files/directories.
+   X_train.csv                                     2207.3 KB
+   X_val.csv                                        621.3 KB
+   X_test.csv                                      1289.3 KB
+   y_train.csv                                       26.5 KB
+   y_val.csv                                          7.6 KB
+   y_test.csv                                        16.5 KB
+   split_report.json                                  1.5 KB
+   features_engineered.csv                         5791.2 KB
 
-✅ All required files present — ready to run Task 3.
+ All required files present — ready to run Task 3.
 
 ```
 
@@ -917,7 +917,7 @@ Test        8,459         32     52.7%       0.9:1  [SEALED]
 scale_pos_weight  : 2.4487
 Feature count     : 32
 
-✅ All splits validated — training medians used for imputation (no leakage).
+ All splits validated — training medians used for imputation (no leakage).
 
 ```
 
@@ -940,7 +940,7 @@ Training Logistic Regression...
 Training Random Forest (200 trees)...
   F1=0.9435  Recall=0.8930  PR-AUC=0.9729  ROC-AUC=0.9637
 
-✅ Baseline models trained.
+ Baseline models trained.
    LR F1 = 0.9406 | RF F1 = 0.9435
    Target to beat with XGBoost: F1 > 0.9435
 
@@ -993,7 +993,7 @@ Grid size: 108 combinations — searching on val F1...
   [ 72/108] Best F1 so far: 0.9446 (depth=4, lr=0.05)
   [108/108] Best F1 so far: 0.9446 (depth=4, lr=0.05)
 
-✅ Grid search complete.
+ Grid search complete.
    Best val F1   : 0.9446
    Best params   : {'max_depth': 4, 'learning_rate': 0.05, 'subsample': 0.9, 'colsample_bytree': 0.7, 'min_child_weight': 5}
 
@@ -1050,7 +1050,7 @@ Optimal threshold: 0.497  (F1=0.9449)
 weighted avg     0.9528    0.9489    0.9487      3892
 
 <Figure size 1400x500 with 2 Axes>
-✅ pr_roc_curves.png saved.
+ pr_roc_curves.png saved.
 
 === HUMANITARIAN THRESHOLD (Recall ≥ 0.95) ===
   Threshold  : 0.077  (vs F1-optimal=0.497)
@@ -1110,11 +1110,11 @@ ipc_phase
 
 Most commonly missed at phase: 2 (Phase 2→3 transitions, model predicted Phase 2 continuation)
 <Figure size 1600x600 with 2 Axes>
-✅ error_analysis_countries.png saved.
+ error_analysis_countries.png saved.
 
 === BLIND SPOT RECOMMENDATIONS ===
 Countries with FNR > 20% (geographic blind spots):
-  ⚠️  Chad: 27.4% FNR
+    Chad: 27.4% FNR
 
 Recommended actions:
   1. Add country fixed-effects or country-specific features in Task 4
@@ -1135,9 +1135,9 @@ Logistic Regression 0.9406  0.8962     0.9895  0.9755   0.9684
     XGBoost Default 0.9432  0.8967     0.9947  0.9906   0.9903
       XGBoost Tuned 0.9449  0.8994     0.9953  0.9890   0.9882
 
-✅ Best model: XGBoost Tuned (F1=0.9449)
+ Best model: XGBoost Tuned (F1=0.9449)
 <Figure size 1400x600 with 1 Axes>
-✅ model_comparison.png saved.
+ model_comparison.png saved.
 
 ```
 
@@ -1180,7 +1180,7 @@ Feature Importance (gain-based, normalised):
 
 Features unused by XGBoost (zero gain): ['lean_drought']
 <Figure size 1100x800 with 1 Axes>
-✅ feature_importance_final.png saved.
+ feature_importance_final.png saved.
 
 ```
 
@@ -1189,8 +1189,8 @@ Features unused by XGBoost (zero gain): ['lean_drought']
 
 #### 🏁 Output
 ```text
-✅ Best model saved: best_model.pkl  (693.3 KB)
-✅ XGBoost native model saved: best_model.json  (764.3 KB)
+ Best model saved: best_model.pkl  (693.3 KB)
+ XGBoost native model saved: best_model.json  (764.3 KB)
 
 === TASK 3 COMPLETE ===
 
@@ -1221,7 +1221,7 @@ Files saved:
   pr_roc_curves.png                                 98.1 KB
   feature_importance.csv                             2.0 KB
 
-✅ Pass best_model.pkl + task3_results.json → Task 4 (Evaluation & SHAP)
+ Pass best_model.pkl + task3_results.json → Task 4 (Evaluation & SHAP)
    Optimal decision threshold = 0.497
 
 ```
@@ -1231,7 +1231,7 @@ Files saved:
 
 #### 🏁 Output
 ```text
-✅ Backup complete → /content/drive/MyDrive/crisis_outputs_backup
+ Backup complete → /content/drive/MyDrive/crisis_outputs_backup
 
 Full task3_results.json:
 {
@@ -1447,7 +1447,7 @@ Data dir    : /content/crisis_outputs
 SHAP        : 0.51.0
 Folium      : 0.20.0
 
-✅ Setup complete.
+ Setup complete.
 
 ```
 
@@ -1457,16 +1457,16 @@ Folium      : 0.20.0
 #### 🏁 Output
 ```text
 Mounted at /content/drive
-✅ Drive mounted.
+ Drive mounted.
 Restored 66 files.
 
-  ✅ best_model.pkl                      693.3 KB
-  ✅ X_test.csv                          1289.3 KB
-  ✅ y_test.csv                          16.5 KB
-  ✅ task3_results.json                  2.7 KB
-  ✅ X_val.csv                           621.3 KB
-  ✅ y_val.csv                           7.6 KB
-  ✅ features_engineered.csv             5791.2 KB
+   best_model.pkl                      693.3 KB
+   X_test.csv                          1289.3 KB
+   y_test.csv                          16.5 KB
+   task3_results.json                  2.7 KB
+   X_val.csv                           621.3 KB
+   y_val.csv                           7.6 KB
+   features_engineered.csv             5791.2 KB
 
 ```
 
@@ -1482,7 +1482,7 @@ Model : best_iteration=499
 Params: {'max_depth': 4, 'learning_rate': 0.05, 'subsample': 0.9, 'colsample_bytree': 0.7, 'min_child_weight': 5}
 F1-threshold=0.497  |  HR-threshold=0.077
 
-✅ Ready for evaluation.
+ Ready for evaluation.
 
 ```
 
@@ -1539,7 +1539,7 @@ ROC-AUC          0.9882     0.9966  +0.0084
 
 #### 🏁 Output
 ```text
-<Figure size 1800x500 with 3 Axes>✅ final_evaluation.png saved.
+<Figure size 1800x500 with 3 Axes> final_evaluation.png saved.
 
 ```
 
@@ -1562,7 +1562,7 @@ Nigeria                              0.9690   0.9481    5.2%   0.9809
 Mozambique                           0.9659   0.9340    6.6%   0.9969
 Kenya                                0.9648   0.9412    5.9%   0.9717
 Mali                                 0.9250   0.8810   11.9%   0.9309
-<Figure size 1600x600 with 2 Axes>✅ country_performance.png saved.
+<Figure size 1600x600 with 2 Axes> country_performance.png saved.
 
 ```
 
@@ -1578,8 +1578,8 @@ SHAP values explain **why** the model makes each prediction.
 ```text
 Computing SHAP values...
 SHAP matrix: (8459, 32)
-<Figure size 800x950 with 2 Axes>✅ shap_beeswarm.png saved.
-<Figure size 800x950 with 1 Axes>✅ shap_summary.png saved.
+<Figure size 800x950 with 2 Axes> shap_beeswarm.png saved.
+<Figure size 800x950 with 1 Axes> shap_summary.png saved.
 
 ```
 
@@ -1593,7 +1593,7 @@ Highest-risk case:
   Date      : 2024-09
   Prob      : 1.0000
   True label: CRISIS
-<Figure size 800x900 with 3 Axes>✅ shap_waterfall_highrisk.png saved.
+<Figure size 800x900 with 3 Axes> shap_waterfall_highrisk.png saved.
 
 ```
 
@@ -1608,7 +1608,7 @@ Missed crisis (FN):
   IPC     : Phase 3
   Prob    : 0.0102  (below threshold -> predicted SAFE)
   True    : CRISIS <- MISSED!
-<Figure size 800x900 with 3 Axes>✅ shap_waterfall_fn.png saved.
+<Figure size 800x900 with 3 Axes> shap_waterfall_fn.png saved.
 
 ```
 
@@ -1729,7 +1729,7 @@ Files saved:
   test_results.json                                   3.0 KB
   africa_crisis_map.html                             31.5 KB
 
-✅ Drive backup complete -> /content/drive/MyDrive/crisis_outputs_backup
+ Drive backup complete -> /content/drive/MyDrive/crisis_outputs_backup
 
 ```
 
