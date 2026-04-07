@@ -17,9 +17,15 @@
 
 </div>
 
+[![Africa Crisis Risk Map - Predicted Mean Probabilities](images/crisis_risk_map.jpg)](africa_crisis_map_v2.html)
+
+### [➡️  Explore Live Interactive Map](africa_crisis_map_v2.html) 🌍
+*(Click image for interactive Leaflet map with zoom & popups)*
+
 ---
 
-##  Table of Contents
+## 📋 Table of Contents
+
 
 - [Project Overview](#-project-overview)
 - [Key Results](#-key-results)
@@ -189,7 +195,10 @@ Feature Categories:
 
 ##  Model Performance
 
+![Best XGBoost Performance - Confusion Matrix and PR Curves](images/confusion_matrices_pr_curves.png)
+
 ### Feature Importance Chart (Top 20)
+
 
 The XGBoost model's gain-based feature importance shows the dominance of IPC history features, with conflict and rainfall features providing the critical marginal signal for predicting *changes* in food security status.
 
@@ -226,6 +235,9 @@ The model uses **SHAP (SHapley Additive exPlanations)** to explain every predict
 ### Global Beeswarm (8,459 test predictions)
 Shows which features push predictions toward crisis (right) or safe (left). High `ipc_lag1` values (red dots) are the single strongest predictor — a region in Phase 3-4 last month is almost certainly in crisis now.
 
+![SHAP Global Feature Importance (Beeswarm and Mean Impact)](images/shap_beeswarm_global.png)
+
+
 ### Waterfall — Highest Confidence Crisis
 ```
 Chad / Lac, September 2024 — P=1.000 (all 499 trees agree)
@@ -235,6 +247,9 @@ Chad / Lac, September 2024 — P=1.000 (all 499 trees agree)
   is_lean_season → +0.08  (September peak lean)
 ```
 
+![SHAP Waterfall — Highest Risk True Positive Case Study](images/shap_waterfall_highest_risk.png)
+
+
 ### Waterfall — Missed Crisis (False Negative)
 ```
 Chad / Barh El Gazel, February 2024 — P=0.010 (predicted SAFE, was CRISIS)
@@ -242,6 +257,9 @@ Chad / Barh El Gazel, February 2024 — P=0.010 (predicted SAFE, was CRISIS)
   ipc_lag2  → -0.21  (no historical crisis signal)
   Root cause: Data-sparse region; sudden deterioration not in lag features
 ```
+
+![SHAP Waterfall — Missed Crisis Blind Spot (False Negative)](images/shap_waterfall_false_negative.png)
+
 
 ---
 
@@ -370,24 +388,24 @@ Conflict-Induced-Food-Crisis-Prediction/
 │   ├── crisis_task2_feature_engineering.ipynb  # Feature engineering
 │   ├── crisis_task3_model_training.ipynb        # Model training
 │   └── crisis_task4_evaluation_FINAL.ipynb     # Evaluation + SHAP
-├── data/                                        # Local data (gitignored)
-├── crisis_outputs/                              # Model outputs
-│   ├── best_model.pkl                          # Trained XGBoost (693 KB)
+├── data/                                        # Local raw data (gitignored)
+├── images/                                      # Locally stored report evidence
+│   ├── crisis_risk_map.jpg                      # Africa risk heatmap
+│   ├── confusion_matrices_pr_curves.png         # Performance curves
+│   ├── shap_beeswarm_global.png                 # Global explainability
+│   └── ...                                      # (13 localized images)
+├── crisis_outputs/                              # Trained model artifacts
+│   ├── best_model.pkl                          # XGBoost binary (709 KB)
 │   ├── best_model.json                         # XGBoost native format
-│   ├── task3_results.json                      # Thresholds + val metrics
-│   ├── test_results.json                       # Final test metrics
-│   ├── feature_importance.csv                  # Feature rankings
-│   ├── shap_beeswarm.png                       # SHAP global plot
-│   ├── shap_waterfall_highrisk.png             # SHAP high-risk
-│   ├── shap_waterfall_fn.png                   # SHAP missed crisis
-│   ├── final_evaluation.png                    # Test CM + PR curves
-│   ├── country_performance.png                 # Per-country metrics
-│   └── africa_crisis_map.html                  # Folium map (Colab)
-├── africa_crisis_map_v2.html                   # Enhanced interactive map
+│   ├── task3_results.json                      # Optimal thresholds
+│   └── test_results.json                       # Final performance logs
+├── INSIGHT_REPORT.md                            # Professional deep-dive report
+├── INSIGHT_REPORT.pdf                           # PDF version for distribution
+├── ANALYSIS_REPORT.md                           # Analytical methodology
+├── africa_crisis_map_v2.html                    # Interactive risk map
 ├── app.py                                       # Streamlit dashboard
 ├── requirements.txt                             # Dependencies
-├── ANALYSIS_REPORT.md                          # Comprehensive report
-└── README.md                                   # This file
+└── README.md                                    # This file
 ```
 
 ---
