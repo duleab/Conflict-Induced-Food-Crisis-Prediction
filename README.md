@@ -105,6 +105,7 @@ Southern Africa : Mozambique
 ---
 
 ##  Pipeline Architecture
+![Pipeline Architecture](images/confusion_matrices_pr_curves.png)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
