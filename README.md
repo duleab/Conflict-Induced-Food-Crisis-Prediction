@@ -19,7 +19,7 @@
 
 [![Africa Crisis Risk Map - Predicted Mean Probabilities](images/crisis_risk_map.jpg)](africa_crisis_map_v2.html)
 
-### [➡️  Explore Live Interactive Map](africa_crisis_map_v2.html) 🌍
+### [  Explore Live Interactive Map](africa_crisis_map_v2.html) 🌍
 *(Click image for interactive Leaflet map with zoom & popups)*
 
 ---
@@ -225,7 +225,7 @@ Chad / Barh El Gazel, February 2024 — P=0.010 (predicted SAFE, was CRISIS)
 
 ---
 
-## 🗺️ Africa Crisis Map
+##  Africa Crisis Map
 
 **Interactive Folium map** (`africa_crisis_map_v2.html`) showing real-time risk predictions:
 
@@ -244,9 +244,9 @@ Chad / Barh El Gazel, February 2024 — P=0.010 (predicted SAFE, was CRISIS)
 
 ### Ground Truth Validation
 All risk predictions align with published 2024-2026 humanitarian assessments:
-- South Sudan P=0.999 → IPC Famine declared (Unity State, Apr 2024) ✅
-- Sudan P=0.955 → World's largest hunger crisis (25M people, 2024) ✅
-- Kenya P=0.098 → Relatively stable food security 2024-25 ✅
+- South Sudan P=0.999 → IPC Famine declared (Unity State, Apr 2024) 
+- Sudan P=0.955 → World's largest hunger crisis (25M people, 2024) 
+- Kenya P=0.098 → Relatively stable food security 2024-25 
 
 ---
 
@@ -376,12 +376,4 @@ Conflict-Induced-Food-Crisis-Prediction/
 
 This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
 
----
 
-<div align="center">
-
-** Star this repo if it helped you!**
-
-*Built with XGBoost · SHAP · Folium · Streamlit · Google Colab*
-
-</div>
