@@ -105,48 +105,9 @@ Southern Africa : Mozambique
 ---
 
 ##  Pipeline Architecture
-![Pipeline Architecture](images/confusion_matrices_pr_curves.png)
+![Pipeline Architecture](images/Pipeline-Architecture.png)
 
 ```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                    DATA SOURCES                                         │
-│  ACLED API ──────┐                                                      │
-│  CHIRPS ─────────┼──► Merge on (country, admin1, year_month)           │
-│  FEWS NET ───────┘                                                      │
-└──────────────────────────────┬──────────────────────────────────────────┘
-                               │
-┌──────────────────────────────▼──────────────────────────────────────────┐
-│                  TASK 1: RAW DATA (207K events, 87 admin1 regions)      │
-└──────────────────────────────┬──────────────────────────────────────────┘
-                               │
-┌──────────────────────────────▼──────────────────────────────────────────┐
-│              TASK 2: FEATURE ENGINEERING (32 features)                  │
-│  IPC lags | Conflict rolling | Rainfall anomaly | Seasonal | Compound   │
-│                                                                         │
-│  Walk-Forward Split (zero leakage):                                     │
-│    Train: 13,574 rows (2018-05→2022-12) crisis=29%                     │
-│    Val  :  3,892 rows (2023-01→2023-12) crisis=49% [evaluation]        │
-│    Test :  8,459 rows (2024-01→2026-01) crisis=53% [SEALED]            │
-└──────────────────────────────┬──────────────────────────────────────────┘
-                               │
-┌──────────────────────────────▼──────────────────────────────────────────┐
-│              TASK 3: MODEL TRAINING & TUNING                            │
-│  Logistic Regression ──► F1=0.9406                                      │
-│  Random Forest ────────► F1=0.9435                                      │
-│  XGBoost Default ──────► F1=0.9432  PR-AUC=0.9906 ★                   │
-│  XGBoost Tuned ────────► F1=0.9449  PR-AUC=0.9890 ← SELECTED          │
-│                                                                         │
-│  Grid search: 108 combos | Best: depth=4, lr=0.05, subsample=0.9       │
-│  Thresholds: F1-optimal=0.497 | Humanitarian=0.077 (recall≥95%)        │
-└──────────────────────────────┬──────────────────────────────────────────┘
-                               │
-┌──────────────────────────────▼──────────────────────────────────────────┐
-│              TASK 4: EVALUATION, SHAP & DEPLOYMENT                      │
-│  Unseal test → F1=0.9914  FNR=1.6%  PR-AUC=0.9976                     │
-│  SHAP analysis → global beeswarm + waterfall explanations               │
-│  Africa map → Folium choropleth + risk circles + popups                 │
-│  Streamlit app → real-time dashboard with interactive map               │
-└─────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
