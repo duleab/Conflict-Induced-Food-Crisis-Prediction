@@ -19,8 +19,8 @@
 
 [![Africa Crisis Risk Map - Predicted Mean Probabilities](images/crisis_risk_map.jpg)](africa_crisis_map_v2.html)
 
-### [  Explore Live Interactive Map](africa_crisis_map_v2.html) 🌍
-*(Click image for interactive Leaflet map with zoom & popups)*
+### [  Explore Live Interactive Map](africa_crisis_map_v2.html) 
+*(Click the download  for interactive Leaflet map with zoom & popups)*
 
 ---
 
