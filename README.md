@@ -355,6 +355,7 @@ Conflict-Induced-Food-Crisis-Prediction/
 │   └── crisis_task4_evaluation_FINAL.ipynb     # Evaluation + SHAP
 ├── data/                                        # Local raw data (gitignored)
 ├── images/                                      # Locally stored report evidence
+│   ├── Conflict-Induced-Food-Crisis-Prediction01.mp4 # Demo video
 │   ├── crisis_risk_map.jpg                      # Africa risk heatmap
 │   ├── confusion_matrices_pr_curves.png         # Performance curves
 │   ├── shap_beeswarm_global.png                 # Global explainability
