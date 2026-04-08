@@ -708,5 +708,9 @@ with p3:
 # ── FOOTER ────────────────────────────────────────────────────────────────────
 st.divider()
 st.markdown("""
-
+<div style="text-align:center; color:var(--text-muted); font-size:12px; padding:16px 0;">
+  <b>Africa Food Crisis Early Warning System</b><br>
+  Data: IPC · ACLED · CHIRPS · GPM&nbsp;&nbsp;|&nbsp;&nbsp;Model: XGBoost v2.1<br>
+  <i>10Academy Humanitarian Data Science · 2026</i>
+</div>
 """, unsafe_allow_html=True)
