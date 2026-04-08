@@ -43,6 +43,7 @@
 ---
 
 ##  Project Overview
+![Conflict-Induced-Food-Crisis-Prediction](images/Conflict-Induced-Food-Crisis-Prediction01.mp4)
 
 This project builds a **machine learning pipeline** that predicts **IPC Phase 3+ food crises** 90 days in advance across 14 Sub-Saharan African countries. It combines:
 
