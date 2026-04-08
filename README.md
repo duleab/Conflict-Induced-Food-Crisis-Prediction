@@ -43,8 +43,10 @@
 ---
 
 ##  Project Overview
-![Conflict-Induced-Food-Crisis-Prediction](images/Conflict-Induced-Food-Crisis-Prediction01.mp4)
 
+<div align="center">
+  <video src="images/Conflict-Induced-Food-Crisis-Prediction01.mp4" width="100%" controls autoplay muted loop></video>
+</div>
 This project builds a **machine learning pipeline** that predicts **IPC Phase 3+ food crises** 90 days in advance across 14 Sub-Saharan African countries. It combines:
 
 - **Armed conflict data** (ACLED — 207,682 events, 2018–2026)
